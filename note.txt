@@ -1,0 +1,35 @@
+Authentification 
+Parametre = creation categorie du produit , categorie de depense 
+zone de vente   
+suivi des ventes
+Lots de vente
+Rapports (different rapports)
+
+Domaine 1
+CORE & ACCESS
+user = role (admin , user), nom , email, mdp 
+Authentification, utilisateurs, permissions, boutiques et paramètres.
+
+
+Domaine 2
+CATALOG & INVENTORY
+
+Produits, catégories, variantes, stocks, fournisseurs, approvisionnements et lots.
+
+
+Domaine 3
+SALES & COMMERCE
+
+Clients, commandes, ventes, promotions et livraisons.
+
+
+Domaine 4
+FINANCE & ACCOUNTING
+
+Dépenses, revenus, caisse, bénéfices et remboursements.
+
+
+Domaine 5
+ANALYTICS & INTEGRATIONS
+
+Rapports, statistiques, notifications, journal d'activité et API publiques.
