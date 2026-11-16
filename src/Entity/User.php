@@ -11,6 +11,15 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+    public const ROLE_USER = 'ROLE_USER';
+    public const ROLE_ADMIN = 'ROLE_ADMIN';
+
+    public const AVAILABLE_ROLES = [
+        self::ROLE_USER,
+        self::ROLE_ADMIN,
+    ];
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -89,15 +98,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function setRoles(array $roles): static
     {
-        $allowedRoles = ['ROLE_USER', 'ROLE_ADMIN'];
-
         foreach ($roles as $role) {
-            if (!in_array($role, $allowedRoles, true)) {
-                throw new \InvalidArgumentException('Rôle non autorisé.');
+            if (!in_array($role, self::AVAILABLE_ROLES, true)) {
+                throw new \InvalidArgumentException(
+                    sprintf('Rôle non autorisé : %s', $role)
+                );
             }
         }
 
-        $this->roles = array_unique($roles);
+        $this->roles = array_values(array_unique($roles));
 
         return $this;
     }
