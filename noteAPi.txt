@@ -19,8 +19,6 @@ curl -X POST https://127.0.0.1:8000/api/v1/product-categories \
     "active": true
 }'
 
-
-
 create type expensive
 
 curl -k -X POST https://127.0.0.1:8000/api/v1/expense-types \
@@ -31,3 +29,16 @@ curl -k -X POST https://127.0.0.1:8000/api/v1/expense-types \
     "description": "Frais de livraison et de déplacement",
     "active": true
 }'
+
+création d'une dépense
+
+curl -k -X POST https://127.0.0.1:8000/api/v1/expenses \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3OTQ5MDA2MTQsImV4cCI6MTc5NDkwNDIxNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5Ac2hvcC5tZyJ9.nKFSMzM5MZGoIAzl4sBpmhhkeBedW6mAFcgFxdVDCmH2wHLbJesPNIV5BIwGPQJUF_ATCJcnSF8_5igay4FgPLTRpeaxW1T5YOMQC8BTeCsdNfR9z8N-amQjKxk4B4PfOJzAaITfkTTmJyWAPi-4aa2TD9cBp_XP4ck2MgUT0ZJfiH9xNIIvs5XC0FiGc0u8B6LT_7Rtd7LI1NrZ0T44t3TAXER_N0b-O1jN64SaIBiDkZI8sbGSORuJeJg2W2FRBOgLDm8r-9zjx0Tc4zGG3RkZKX4yPlZOS7kf6UB_efCTrv5P_tXFzMdRi4J-SqG1UdxS5x_PB2sQI5nkFKIzhw" \
+-d '{
+    "amount": "15000.00",
+    "description": "Livraison de marchandises",
+    "expenseDate": "2026-11-17T10:00:00+03:00",
+    "expenseTypeId": 1
+}'
+
