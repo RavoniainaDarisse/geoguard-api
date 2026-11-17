@@ -1,0 +1,9 @@
+Login
+
+curl -k -X POST https://127.0.0.1:8000/api/v1/auth/login \
+-H "Content-Type: application/json" \
+-d '{
+    "email": "admin@shop.mg",
+    "password": "password123"
+}'
+
