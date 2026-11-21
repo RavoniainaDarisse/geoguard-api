@@ -42,3 +42,19 @@ curl -k -X POST https://127.0.0.1:8000/api/v1/expenses \
     "expenseTypeId": 1
 }'
 
+creation Produits
+
+curl -k -X POST https://127.0.0.1:8000/api/v1/products \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3OTUyNTI0MTEsImV4cCI6MTc5NTI1NjAxMSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5Ac2hvcC5tZyJ9.tZIcRd2qIImi7ErIVjWJtGJVWWzJpoI3ePnr91hurA5Sac5TVYvoCAUDAx_IAS_Y1HRFg0Q1yfJiJnURRTeYWHTs4PiM10VbSmq_8-8bylJZXQc1klod8Q01Z5FlHIeqcTGJNjHQ9jwuq3hsKcnINMtBn18gkjNm_jF-2EFRAnonzjQ4i5F7w26PUhtGdVjoK-wJ5CIHRMmm3fH3ZZzkHFaI2yxFQPssFFENp4KY-S_FAV-KQbp6z--D6xE3s2QzdtR2oPUjmTn1XW0LPsKKpmqfVjvbO4Zhp4cgrbGVKl09WFa18vwwm1vzch8wUfTpjKMUElV8AjUpErAu3Pi-eQ" \
+-d '{
+    "name": "Top femme",
+    "reference": "TOP-001",
+    "description": "Top élégant pour femme",
+    "purchasePrice": "15000.00",
+    "sellingPrice": "25000.00",
+    "image": null,
+    "active": true,
+    "categoryId": 1
+}'
+
